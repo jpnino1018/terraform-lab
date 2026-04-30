@@ -34,3 +34,8 @@ variable "allowed_ssh_cidr" {
   type    = string
   default = "0.0.0.0/0"
 }
+
+variable "instance_type" {
+  type    = string
+  default = "t2.micro"
+}

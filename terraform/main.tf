@@ -19,3 +19,14 @@ module "network" {
   allowed_ssh_cidr   = var.allowed_ssh_cidr
   common_tags        = local.common_tags
 }
+
+module "compute" {
+  source = "./modules/compute"
+
+  name_prefix       = local.name_prefix
+  student_name      = var.student_name
+  instance_type     = var.instance_type
+  subnet_id         = module.network.public_subnet_id
+  security_group_id = module.network.security_group_id
+  common_tags       = local.common_tags
+}
