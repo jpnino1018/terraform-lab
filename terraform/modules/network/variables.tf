@@ -1,17 +1,4 @@
-variable "aws_region" {
-  type    = string
-  default = "us-east-1"
-}
-
-variable "student_name" {
-  type = string
-}
-
-variable "environment" {
-  type = string
-}
-
-variable "project_name" {
+variable "name_prefix" {
   type = string
 }
 
@@ -33,4 +20,8 @@ variable "availability_zone" {
 variable "allowed_ssh_cidr" {
   type    = string
   default = "0.0.0.0/0"
+}
+
+variable "common_tags" {
+  type = map(string)
 }
